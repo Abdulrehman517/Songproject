@@ -1,8 +1,10 @@
 from django.db import models
 
+
 class Album(models.Model):
     album_name = models.CharField(max_length=200)
     artist = models.CharField(max_length=200)
+
 
 class Track(models.Model):
     album = models.ForeignKey(Album, related_name='tracks', on_delete=models.CASCADE)
